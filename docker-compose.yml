@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  qmeter_db:
+    image: mongo:5.0
+    container_name: mongo
+    restart: always
+    env_file: 
+      - .env
+    environment: 
+      - MONGO_INITDB_DATABASE=${MONGO_DB_NAME}
+      - MONGO_INITDB_USERNAME=${MONGO_DB_USERNAME}
+      - MONGO_INITDB_PASSWORD=${MONGO_DB_PASSWORD}
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  qmeter_web:
+    restart: always
+    build: ./src
+    container_name: qmeter_web
+    networks:
+      - qmeter_network
+    command: >
+      sh -c "python manage.py collectstatic --noinput &&
+             python manage.py makemigrations &&
+             python manage.py migrate &&
+             gunicorn --bind 0.0.0.0:8000 --timeout 300 --worker-class=gevent --worker-connections=1000 --workers=5 core.wsgi"
+    volumes:
+      - ./src:/src
+      - ./src/core:/src/core
+      - ./src/static:/src/static
+      - ./src/media:/src/media
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - qmeter_db
+
+volumes:
+  postgres_data:
+    driver: local
+  static:
+    driver: local
+  media:
+    driver: local
+  web:
+    driver: local
+
+networks:
+  qmeter_network:
+    driver: bridge
