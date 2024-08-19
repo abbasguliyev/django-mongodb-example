@@ -9,13 +9,11 @@ CSRF_WHITELIST_ORIGINS =env("CSRF_TRUSTED_ORIGINS").split(',')
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': env('MONGO_DB_NAME'),
-        'CLIENT': {
-            'host': env('MONGO_HOST'),
-            'port': int(env('MONGO_PORT', 27017)),
-            'username': env('MONGO_DB_USERNAME'),
-            'password': env('MONGO_DB_PASSWORD'),
-        }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     }
 }

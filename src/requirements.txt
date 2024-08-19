@@ -1,10 +1,9 @@
 asgiref==3.8.1
 attrs==24.2.0
-Django==5.1
+Django==4.2
 django-cors-headers==4.4.0
 django-environ==0.11.2
 djangorestframework==3.15.2
-pymongo==4.8.0
 dnspython==2.6.1
 drf-spectacular==0.27.2
 gevent==24.2.1
@@ -12,11 +11,15 @@ greenlet==3.0.3
 inflection==0.5.1
 jsonschema==4.23.0
 jsonschema-specifications==2023.12.1
+mongoengine==0.28.2
 pillow==10.4.0
+psycopg2-binary==2.9.9
+pymongo==4.8.0
 PyYAML==6.0.2
 referencing==0.35.1
 rpds-py==0.20.0
 setuptools==72.2.0
+sqlparse==0.5.1
 uritemplate==4.1.1
 zope.event==5.0
 zope.interface==7.0.1

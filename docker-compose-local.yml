@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  qmeter_db:
+  mongo:
     image: mongo:5.0
     container_name: mongo
     restart: always
@@ -9,12 +9,27 @@ services:
       - .env
     environment: 
       - MONGO_INITDB_DATABASE=${MONGO_DB_NAME}
-      - MONGO_INITDB_USERNAME=${MONGO_DB_USERNAME}
-      - MONGO_INITDB_PASSWORD=${MONGO_DB_PASSWORD}
     ports:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+
+  postgres:
+    restart: always
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "54032:5432"
+    networks:
+      - qmeter_network
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_HOST=${DB_HOST}
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
 
   qmeter_web:
     restart: always
@@ -37,12 +52,15 @@ services:
     env_file:
       - .env
     depends_on:
-      - qmeter_db
+      - mongo
+      - postgres
 
 volumes:
   mongo_data:
     driver: local
-
+  postgres_data:
+    driver: local
+    
 networks:
   qmeter_network:
     driver: bridge

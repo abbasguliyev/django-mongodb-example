@@ -53,6 +53,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_spectacular',
     'rest_framework',
+
+    # apps
+    'feedback.apps.FeedbackConfig',
 ]
 
 MIDDLEWARE = [
@@ -132,16 +135,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR / '../../media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
+    # 'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ),
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 SPECTACULAR_SETTINGS = {
-    'AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
+    # 'AUTHENTICATION_CLASSES': (
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # ),
     'SWAGGER_UI_SETTINGS': {
         'persistAuthorization': True,
     },
