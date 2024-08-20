@@ -57,6 +57,19 @@ services:
       - mongo
       - postgres
 
+  nginx:
+    restart: always
+    build: ./nginx
+    volumes:
+      - ./src:/usr/share/nginx/html
+    ports:
+      # - "443:443"
+      - "8080:80"
+    depends_on:
+      - qmeter_web
+    networks:
+      - qmeter_network
+
 volumes:
   postgres_data:
     driver: local

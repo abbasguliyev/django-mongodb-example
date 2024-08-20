@@ -4,6 +4,11 @@
 
 This project is a solution to the task provided by Qmeter.
 
+## Preparation
+
+Create a `.env` file in the same directory as the `docker-compose.yml` file and copy the contents from the `.env.example` file into it. For production, specify `DJANGO_SETTINGS_MODULE="core.settings.prod"`.
+
+
 ## Running the Project
 
 ### Development Mode
