@@ -5,6 +5,8 @@ services:
     image: mongo:5.0
     container_name: mongo
     restart: always
+    networks:
+      - qmeter_network
     env_file: 
       - .env
     environment: 

@@ -16,6 +16,8 @@ import environ
 
 from datetime import timedelta
 
+from pymongo import MongoClient
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -105,6 +107,16 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# MongoDB connection settings
+MONGO_HOST = env('MONGO_HOST', default='localhost')
+MONGO_PORT = int(env('MONGO_PORT', default=27017))
+
+def get_mongo_client():
+    return MongoClient(MONGO_HOST, MONGO_PORT)
+
+# MongoDB client instance
+MONGO_CLIENT = get_mongo_client()
 
 
 # Internationalization

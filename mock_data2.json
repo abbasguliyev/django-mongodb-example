@@ -1,0 +1,124 @@
+[
+    {
+        "_id": "65b100b654582102a1c1de85",
+        "id": 183115,
+        "branch": {
+            "id": 786,
+            "name": "Branch 1",
+            "fid": null
+        },
+        "feedback_rate": [
+            {
+                "id": 403585,
+                "mark_page": null,
+                "service": {
+                    "id": 1814,
+                    "name": "Marketing Service",
+                    "fid": null
+                },
+                "rate_option": 1,
+                "feedback_mark": [],
+                "created_at": "2024-01-24T12:21:10",
+                "updated_at": "2024-01-24T12:21:10"
+            },
+            {
+                "id": 403584,
+                "mark_page": null,
+                "service": {
+                    "id": 1813,
+                    "name": "Customer service",
+                    "fid": null
+                },
+                "rate_option": 1,
+                "feedback_mark": [],
+                "created_at": "2024-01-24T12:21:10",
+                "updated_at": "2024-01-24T12:21:10"
+            }
+        ]
+    },
+    {
+        "_id": "65b100b654582102a1c1de86",
+        "id": 183115,
+        "branch": {
+            "id": 786,
+            "name": "Branch 1",
+            "fid": null
+        },
+        "feedback_rate": [
+            {
+                "id": 403585,
+                "mark_page": null,
+                "service": {
+                    "id": 1814,
+                    "name": "Marketing Service",
+                    "fid": null
+                },
+                "rate_option": 4,
+                "feedback_mark": [],
+                "created_at": "2024-01-24T12:21:10",
+                "updated_at": "2024-01-24T12:21:10"
+            }
+        ]
+    },
+    {
+        "_id": "65b100b654582102a1c1de87",
+        "id": 183115,
+        "branch": {
+            "id": 787,
+            "name": "Branch 2",
+            "fid": null
+        },
+        "feedback_rate": [
+            {
+                "id": 403585,
+                "mark_page": null,
+                "service": {
+                    "id": 1814,
+                    "name": "Banking Service",
+                    "fid": null
+                },
+                "rate_option": 5,
+                "feedback_mark": [],
+                "created_at": "2024-01-24T12:21:10",
+                "updated_at": "2024-01-24T12:21:10"
+            },
+            {
+                "id": 403584,
+                "mark_page": null,
+                "service": {
+                    "id": 1813,
+                    "name": "Customer service",
+                    "fid": null
+                },
+                "rate_option": 4,
+                "feedback_mark": [],
+                "created_at": "2024-01-24T12:21:10",
+                "updated_at": "2024-01-24T12:21:10"
+            }
+        ]
+    },
+    {
+        "_id": "65b100b654582102a1c1de88",
+        "id": 183115,
+        "branch": {
+            "id": 787,
+            "name": "Branch 2",
+            "fid": null
+        },
+        "feedback_rate": [
+            {
+                "id": 403584,
+                "mark_page": null,
+                "service": {
+                    "id": 1813,
+                    "name": "Customer service",
+                    "fid": null
+                },
+                "rate_option": 5,
+                "feedback_mark": [],
+                "created_at": "2024-01-24T12:21:10",
+                "updated_at": "2024-01-24T12:21:10"
+            }
+        ]
+    }
+]
