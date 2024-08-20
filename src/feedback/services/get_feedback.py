@@ -88,7 +88,6 @@ def get_feedback_scores():
                 }
             }
         },
-        # Düsturu tətbiq edirik və hər bir service-ə score hesablama
         {
             '$project': {
                 'branch': 1,
@@ -114,12 +113,11 @@ def get_feedback_scores():
                 }
             }
         },
-        # Yenidən branch adı ilə qruplaşdırırıq və service dict yaradırıq
         {
             '$group': {
-                '_id': '$branch',  # Branch adı üzrə qruplaşdırma
+                '_id': '$branch',
                 'services': {
-                    '$push': {  # Service adı və score dict formatında toplayırıq
+                    '$push': {
                         'service_name': '$service',
                         'score': '$score'
                     }
