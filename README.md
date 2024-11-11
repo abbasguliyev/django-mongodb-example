@@ -1,8 +1,4 @@
-# QMETER TEST APP
-
-# Project Overview
-
-This project is a solution to the task provided by Qmeter.
+# Django MongoDB Example
 
 ## Preparation
 
@@ -31,8 +27,8 @@ docker compose up
 
 **Note:** There are two forms of mock data:
 
-- `mock_data2.json`: A short JSON example sent via Gmail.
-- `mock_data.json`: A more extensive JSON file obtained from [this URL](https://qmeter-fb-dev.s3.amazonaws.com/media/feedback.json) sent via Gmail.
+- `mock_data2.json`: A short JSON example.
+- `mock_data.json`: A more extensive JSON file.
 
 ## To load mock data into MongoDB, use the following command:
 
